@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Directorio Médico</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+     <!-- Custom fonts for this template -->
+     <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+ 
+     <!-- Custom styles for this template -->
+     <link href="css/one-page-wonder.css" rel="stylesheet">
+ 
+     <meta name="theme-color" content="#ee0979">
+</head>
+<body>
+
+      <!-- Navigation -->
+      <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">Directorio Médico</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <form class="d-flex align-items-center" style="margin-top: 5rem; margin-left: 2rem; margin-right: 2rem;" action="/buscar" method="post">
+        <input class="form-control me-2" type="search" name="term" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>      
+  
+      
+
+<div class="d-flex justify-content-center">
+    <div class="container">
+        <% publicaciones.forEach((publicacion) => { %>
+            <div class="card" style="width: 24rem; margin-top: 2rem;">
+                <img src="data:image/png;base64,<%= publicacion.foto.toString('base64') %>" class="card-img-top" alt="imagen">
+                <div class="card-body">
+                    <h5 class="card-title"><%= publicacion.servicios %></h5>
+                    <p class="card-text"><%= publicacion.ubicacion %></p>
+                    <a href="/masInformacion/<%= publicacion.id %>" class="btn btn-primary">Más información</a>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<script src="../../../rutas.js"></script>
+
+</body>
+</html>

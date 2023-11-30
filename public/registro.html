@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/app.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Registro</title>
+</head>
+<body>
+    <div class="container">
+    <div class="mt-10 mx-auto max-w-md">
+        <div class="bg-white py-8 px-4 shadow">
+            <form class="space-y-5" action="/registro" method="POST" novalidate enctype="multipart/form-data">
+                <h2 class="font-bold text-center">Publica tus servicios</h2>
+                <div>
+                    <label class="block text-sm uppercase text-gray-500 mb-2 font-bold" for="nombre">Tu Nombre</label>
+                    <input id="nombre" class="w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400" placeholder="Tu Nombre" type="text" name="nombre">
+                </div>
+    
+                <div>
+                    <label class="block text-sm uppercase text-gray-500 mb-2 font-bold" for="ubicacion">Ubicación</label>
+                    <input id="ubicacion" class="w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400" placeholder="Ubicación" type="text" name="ubicacion">
+                </div>
+    
+                <div>
+                    <label class="block text-sm uppercase text-gray-500 mb-2 font-bold" for="servicios">Servicios que ofreces</label>
+                    <input id="servicios" class="w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400" placeholder="Servicios que ofreces" type="text" name="servicios">
+                </div>
+    
+                <div>
+                    <label class="block text-sm uppercase text-gray-500 mb-2 font-bold" for="foto">Imagen</label>
+                    <input id="foto" class="w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400" placeholder="Imagen de referencia" type="file" name="foto">
+                </div>
+
+                <div>
+                    <label class="block text-sm uppercase text-gray-500 mb-2 font-bold" for="horario">Horario</label>
+                    <input id="horario" class="w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400" placeholder="Horario de referencia" type="text" name="horario">
+                </div>
+    
+                
+                <div>
+                    <label class="block text-sm uppercase text-gray-500 mb-2 font-bold" for="numero">Numero de contacto</label>
+                    <input id="numero" class="w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400" placeholder="Numero de contacto" type="text" name="numero">
+                </div>
+
+                <div class="flex items-center justify-between">
+                    <a class="text-gray-500 text-xs" href="/index.html">Buscar consultorio</a>
+                </div>
+    
+                <input id="publicar" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 cursor-pointer" type="submit" value="Publicar">
+            </form>
+        </div>
+    </div>
+</div>
+    
+</body>
+</html>

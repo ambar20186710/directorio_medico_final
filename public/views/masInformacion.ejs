@@ -1,0 +1,99 @@
+<!-- masInformacion.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Más Información</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+     <!-- Custom fonts for this template -->
+     <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+ 
+     <!-- Custom styles for this template -->
+     <link href="../css/one-page-wonder.css" rel="stylesheet">
+
+     <meta name="theme-color" content="#ee0979">
+ 
+ 
+</head>
+<body>
+
+
+
+
+<div class="container">
+    <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">Directorio Médico</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/publicaciones">Buscar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/registro">Registra tu consultorio</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    
+  <div class="card mb-3" style="max-width: 540px; margin-top: 25%;">
+    <div class="row g-0">
+        <div class="col-md-10">
+            <img src="data:image/png;base64,<%= publicacion.foto.toString('base64') %>" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h2 class="card-title"><%= publicacion.servicios %></h5>
+                <h5 class="card-text">Doctor: <%= publicacion.nombre%></h5>
+                <h5 class="card-text">Horarios: <%= publicacion.horario%></h5>
+                <h5 class="card-text">Ubicación: <%= publicacion.ubicacion%></h5>
+                <h5 class="card-text">Número de contacto: <%= publicacion.numero%></h5>
+                <h5 class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="comment-section">
+    <h3>Comments:</h3>
+    <div id="comments-container"></div>
+  </div>
+  
+  <div>
+    <h3>Leave a comment:</h3>
+    <textarea id="comment-input" style="width: 50%;"></textarea><br>
+    <button id="submit-button">Submit</button>
+  </div>
+  
+  <script>
+    const submitButton = document.getElementById("submit-button");
+const commentInput = document.getElementById("comment-input");
+const commentsContainer = document.getElementById("comments-container");
+
+submitButton.addEventListener("click", function() {
+  const comment = commentInput.value;
+  const commentElement = document.createElement("div");
+  commentElement.innerHTML = `
+  <div class="card">
+  <div class="card-body">
+    ${comment}
+  </div>
+</div>
+  `
+  commentsContainer.appendChild(commentElement);
+  commentInput.value = "";
+});
+  </script>
+  
+
+<script src="../../../rutas.js"></script>
+
+</body>
+</html>
